@@ -6,6 +6,9 @@ This project is an address book application build on [AngularJS](http://angularj
 
 It is my first Angular JS app and it could contain some bad practices.
 
+### Live Demo
+
+There is a live demo running on http://aluzardo.github.io/address-book-angular-js
 
 ### Run the Application
 
@@ -96,4 +99,5 @@ instruction on how to do this.
 ## Contact
 
 For more information on about this project please contact with me https://aluzardo.github.io/
+
 Thanks for your feedback to improve my coding.
