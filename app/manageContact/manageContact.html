@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="text-left">
+    <a href="#/contacts"><span class="glyphicon glyphicon-arrow-left"></span></a>
+  </div>
+
+  <h1 class="text-center" ng-if="!editStatus">Add Contact</h1>
+  <h1 class="text-center" ng-if="editStatus">Edit Contact</h1>
+
+  <form class="form-horizontal"name="contactForm" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.firstName.$invalid && contactForm.firstName.$touched }">
+      <label class="control-label col-sm-2" for="firstName">First Name:</label>
+      <div class="col-sm-10">
+        <input id="firstName" name="firstName" class="form-control" data-ng-model="contact.firstName" type="text" placeholder="Enter your first name" required>
+        <p ng-show="contactForm.firstName.$invalid && contactForm.firstName.$touched" class="help-block">Your first name is required.</p>
+      </div>
+
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.lastName.$invalid && contactForm.lastName.$touched }">
+      <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+      <div class="col-sm-10">
+        <input id="lastName" name="lastName" class="form-control" data-ng-model="contact.lastName" type="text" placeholder="Enter your last name" required>
+        <p ng-show="contactForm.lastName.$invalid && contactForm.lastName.$touched" class="help-block">Your last name is required.</p>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.email.$invalid && contactForm.email.$touched }">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input id="email" name="email" class="form-control" data-ng-model="contact.emailAddress" type="text" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" placeholder="Enter your email" required>
+        <p ng-show="contactForm.email.$invalid && contactForm.email.$touched" class="help-block">A valid email is required.</p>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : contactForm.country.$invalid && contactForm.country.$touched }">
+      <label class="control-label col-sm-2" for="country">Country:</label>
+      <div class="col-sm-10">
+        <select ng-options="country as country.name for country in countries track by country.code" id="country" name="country" class="form-control" data-ng-model="contact.country" required></select>
+        <p ng-show="contactForm.country.$invalid && contactForm.country.$touched" class="help-block">Your country is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button ng-if="!editStatus" class="btn btn-primary" type="button"
+                data-ng-disabled="contactForm.$invalid"
+                data-ng-click="insertContact()">Add Contact</button>
+        <button ng-if="editStatus" class="btn btn-primary" type="button"
+                data-ng-disabled="contactForm.$invalid"
+                data-ng-click="editContact()">Edit Contact</button>
+        <button ng-if="editStatus" class="btn btn-danger" type="button"
+                data-ng-disabled="contactForm.$invalid"
+                data-ng-click="deleteContact()">Delete Contact</button>
+      </div>
+    </div>
+  </form>
+</div>

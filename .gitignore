@@ -1,0 +1,8 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+country-list-bundle.js
+tmp
+.DS_Store
+.idea

@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="text-center">Contacts</h1>
+    <div>
+        <a class="btn btn-primary" role="button" href="#/add-contact">Add Contact</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="contact in contacts | orderBy:'firstName'">
+                <td>{{contact.id}}</td>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.emailAddress}}</td>
+                <td>{{contact.country.name}}</td>
+                <td><button class="btn btn-warning" data-ng-click="editContact(contact.id)">Edit</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
