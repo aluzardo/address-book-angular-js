@@ -5,7 +5,6 @@ angular.module('myApp', [
     'ngRoute',
     'LocalStorageModule',
     'myApp.services.contactsData',
-    'ui.bootstrap',
     'myApp.contacts',
     'myApp.manageContact',
     'myApp.version'
