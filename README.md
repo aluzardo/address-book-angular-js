@@ -1,5 +1,7 @@
 # address-book-angular-js — Address book AngularJS app
 
+[![Build Status](https://travis-ci.org/aluzardo/address-book-angular-js.svg?branch=master)](https://travis-ci.org/aluzardo/address-book-angular-js)
+
 This project is an address book application build on [AngularJS](http://angularjs.org/).
 
 It is my first Angular JS app and it could contain some bad practices.
