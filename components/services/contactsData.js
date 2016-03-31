@@ -60,14 +60,14 @@ angular.module('myApp.services.contactsData', [])
                         id: 0,
                         firstName: 'Adolfo',
                         lastName: 'Luzardo Cabrera',
-                        country: '{"code":"ES","name":"Spain"}',
+                        country: JSON.parse('{"code":"ES","name":"Spain"}'),
                         emailAddress: 'adolfoluzardocabrera@gmail.com'
                     },
                     {
                         id: 1,
                         firstName: 'Dunia',
                         lastName: 'Ojeda García',
-                        country: '{"code":"ES","name":"Spain"}',
+                        country: JSON.parse('{"code":"ES","name":"Spain"}'),
                         emailAddress: 'duniam_83@hotmail.com'
                     }
                 ];
